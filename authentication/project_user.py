@@ -206,7 +206,7 @@ class ProjectUser(BaseUser):
             'only_upper': password.upper() == password,
             'only_digits': password.isdigit(),
             'only_symbols': re.search(r"^\W*$", password) is None,
-            'no_letters': re.search(r"\w", password) is None,
+            'no_letters': re.search(r"\w*", password) is None,
             'no_upper': not any([i.isupper() for i in password]),
             'no_lower': not any([i.islower() for i in password]),
             'no_digits': re.search(r"\d", password) is None,

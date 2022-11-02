@@ -72,7 +72,7 @@ def main(local: bool = False) -> Union[int, Starlette]:
 
     # run this as the main task if local is set. Default is not to run
     if local:
-        uvicorn.run(app, host='0.0.0.0', port=8260)  #
+        uvicorn.run(app, host='0.0.0.0', port=8260)
         Resources().db_client.close()
     else:
         return app

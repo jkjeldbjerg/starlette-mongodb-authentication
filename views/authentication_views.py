@@ -45,7 +45,7 @@ class AuthenticationViews(Views):
             if usr is not None:
                 self.add_message(request, "Invalid username or password")
                 return RedirectResponse(request.url_for('login'), status_code=303)
-            return RedirectResponse(request.url_for('home'), status_code=303)
+            return RedirectResponse(request.url_for('login'), status_code=303)
         else:
             request.session['user'] = str(project_user.info['_id'])
             self.add_message(request, f"Login successful. Welcome {project_user.identity}!")
