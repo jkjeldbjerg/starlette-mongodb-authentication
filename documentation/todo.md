@@ -51,6 +51,8 @@ Finalise list of test cases in `Auth_test_cases.md`.
 
 Write automated tests.
 * Some are done for testing features on login, logout, scopes
+* Not getting server running in tests, maybe: 
+* [Stackoverflow: how-to-start-a-uvicorn-fastapi-in-background-when-testing-with-pytest](https://stackoverflow.com/questions/57412825/how-to-start-a-uvicorn-fastapi-in-background-when-testing-with-pytest)
 
 ## CSRF
 
