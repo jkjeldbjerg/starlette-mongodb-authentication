@@ -1,0 +1,8 @@
+{% extends('base.html') %}
+{% block content %}
+    <h1> Hurrah</h1>
+    <p>We have been logged in as an authenticated user</p>
+    <p>
+        <a href="{{ request.url_for('home') }}">Go home</a>
+    </p>
+{% endblock %}

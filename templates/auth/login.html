@@ -1,0 +1,29 @@
+{% extends('base.html') %}
+{% block content %}
+    <h1>Login form</h1>
+    <div><a href="{{ request.url_for('home') }}">Go home</a></div>
+
+    <div class="login-form" id="login-form">
+    <form method="post" action="{{ request.url_for('do_login') }}?next={{ request.query_params['next']|default('') }}">
+        <label for="usr" class="login-label">Username</label>
+        <input type="text" name="usr" id="usr" placeholder="Username" required><br>
+        <label for="pwd" class="login-label">Password</label>
+        <input type="password" name="pwd" id="pwd" placeholder="Password" required><br>
+        <div>
+            <script>
+                function insert_data(user, pass) {
+                    document.getElementById('usr').value = user;
+                    document.getElementById('pwd').value = pass;
+                }
+            </script>
+            <a href="javascript:insert_data('user@space.net', '1234');">Insert credentials</a><br>
+            <a href="javascript:insert_data('user@space.net', 'nopass');">Insert user and wrong password</a><br>
+            <a href="javascript:insert_data('usr1', 'nopass');">Insert wrong credentials</a><br><hr><br>
+            <a href="javascript:insert_data('adm@nowhere.here', '1234');">Insert admin</a>
+        </div>
+        <div class="login-buttons">
+            <button type="reset">Ryd</button><button type="submit">Login</button>
+        </div>
+    </form>
+    </div>
+{% endblock %}

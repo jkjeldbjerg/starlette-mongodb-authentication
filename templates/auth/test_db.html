@@ -1,0 +1,8 @@
+{% extends('base.html') %}
+{% block content %}
+    <h1>Testing data access</h1>
+    <div>
+        <a href="{{ request.url_for('home') }}">Go home</a>
+    </div>
+    <p>{{ data }}</p>
+{% endblock %}

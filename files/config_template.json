@@ -1,0 +1,11 @@
+{
+  "logging": "DEBUG",
+  "debug": true,
+    "mongo": {
+    "usr": "<MongoDB username here>",
+    "pwd": "<MongoDB password here>",
+    "url": "<MongoDB URL here",
+    "db": "<MongoDB database here>",
+    "admin": "<(OPTIONAL) MongoDB database for credentials etc. here>"
+  }
+}
