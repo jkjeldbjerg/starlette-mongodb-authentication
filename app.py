@@ -1,6 +1,6 @@
 import logging
 import sys
-from typing import Optional
+from typing import Optional, Union
 
 import uvicorn as uvicorn
 from starlette.applications import Starlette
@@ -10,7 +10,6 @@ from starlette.middleware.authentication import AuthenticationMiddleware
 from starlette.routing import Route, Mount
 from starlette.staticfiles import StaticFiles
 
-import views.basic_views
 from views.basic_views import BasicViews
 from views.authentication_views import AuthenticationViews
 from authentication.authentication import BasicAuthBackend
@@ -18,7 +17,7 @@ from middleware.session_middleware import ProjectSessionMiddleware
 from singletons.resources import Resources
 
 
-def main(local: bool = False) -> Optional[int]:
+def main(local: bool = False) -> Union[int, Starlette]:
     """ main execution function """
     # Setup logging
     logging.basicConfig(stream=sys.stdout,
@@ -75,13 +74,17 @@ def main(local: bool = False) -> Optional[int]:
     if local:
         uvicorn.run(app, host='0.0.0.0', port=8260)  #
         Resources().db_client.close()
+    else:
+        return app
     # no return when successful - the Optional bit
 
 
 if __name__ == '__main__':
     """ Run main """
     code: int = main(local=True)
-    if code is not None:
+    if type(code) is Starlette:
+        pass
+    elif code is not None:
         exit(code)
 
 # EOF

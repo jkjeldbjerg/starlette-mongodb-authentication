@@ -12,6 +12,8 @@ very bad for security!
 
 You will want to clone this repository and build your own application on top.
 
+Details on how to run the application can be found in `documentation/running.md`.
+
 ## Cookie concern
 
 Due to rules and regulations we need to state in our terms that we use technical cookies.
@@ -100,3 +102,9 @@ See the file `documentation/Auth_test_cases.md` for a list of cases
 ## License
 
 This project is licensed under the terms of the MIT license, see `LICENSE`.
+
+## Thank you
+
+This project has taken a lot of inspiration from the 
+[Starlette-Core project](Starlette Core
+https://accent-starlette.github.io/starlette-core/). Thank you for the good work. Appreciated.
