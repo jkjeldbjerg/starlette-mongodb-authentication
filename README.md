@@ -12,6 +12,10 @@ very bad for security!
 
 You will want to clone this repository and build your own application on top.
 
+```shell
+git clone https://github.com/jkjeldbjerg/starlette-mongodb-authentication
+```
+
 Details on how to run the application can be found in `documentation/running.md`.
 
 ## Cookie concern
@@ -97,7 +101,14 @@ This is where you add your own collections.
 
 ## Test flows
 
-See the file `documentation/Auth_test_cases.md` for a list of cases
+Tests are available in `/test` folder. Run with 
+
+```shell
+python3 -m unittest discover test -v
+```
+
+See the file `documentation/Auth_test_cases.md` for a list of user-flows that 
+should/could be tested
 
 ## License
 

@@ -10,6 +10,7 @@ from singletons.resources import Resources
 
 
 def main():
+    """ create a minimal set of scopes """
     logging.basicConfig(stream=sys.stdout,
                         format=f'%(asctime)s %(levelname)s: %(message)s',  # noqa
                         level=logging.DEBUG)
@@ -24,6 +25,7 @@ def main():
     ]
 
     for scope in scopes:
+        """ avoid duplication by upserting """
         scope_collection.find_one_and_update({'scope': scope['scope']}, {'$set': scope}, upsert=True)
 
 
