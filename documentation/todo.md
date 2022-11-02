@@ -49,7 +49,8 @@ Something to think about.
 
 Finalise list of test cases in `Auth_test_cases.md`.
 
-Write automated tests
+Write automated tests.
+* Some are done for testing features on login, logout, scopes
 
 ## CSRF
 
